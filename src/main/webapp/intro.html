@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
+    <title>Slide</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<!-- 样式以后不放在这里; -->
+<style>
+.page1 {
+    width: 100%;
+    height: 100%;
+}
+
+#aa {
+    width: 200px;
+    height: 300px;
+    background: red;
+}
+
+#bb {
+    width: 300px;
+    height: 300px;
+    background: green;
+}
+
+#cc {
+    width: 350px;
+    height: 200px;
+    background: #ccc;
+}
+#dd {
+    width: 350px;
+    height: 200px;
+    background: #aaa;
+}
+#ee {
+    width: 350px;
+    height: 200px;
+    background: #eee;
+}
+</style>
+
+<body>
+    <div class="page1">
+        <ul class="m-cursor">
+            <li class='prev'>&lt;</li>
+            <li class='cursor'></li>
+            <li class='cursor'></li>
+            <li class='cursor'></li>
+            <li class='cursor'></li>
+            <li class='cursor'></li>
+            <li class='next'>&gt;</li>
+        </ul>
+    </div>
+    <script src='js/util.js'></script>
+    <script src='js/slider.js'></script>
+    <script>
+    var $ = function(selector) {
+        return [].slice.call(document.querySelectorAll(selector))
+    };
+    var container = $('.page1')[0];
+    var cursors = $('.m-cursor .cursor');
+    var prev = $('.m-cursor .prev')[0];
+    var next = $('.m-cursor .next')[0];
+    cursors.forEach(function(cursor, index) {
+        cursor.addEventListener('click', function() {
+            slider.nav(index);
+        })
+    })
+    prev.addEventListener('click', function() {
+        slider.prev()
+    })
+    next.addEventListener('click', function() {
+        slider.next()
+    })
+    var slider = new Slider({
+        //视口容器
+        container: container,
+        // 展示列表
+        sld: [
+            '<div id="aa" class="person">张三</div>',
+            '<div id="bb" class="person">李四</div>',
+            '<div id="cc" class="person">王五</div>',
+            '<div id="ee" class="person">赵六</div>',
+            '<div id="dd" class="person">周七</div>'
+        ],
+        // 是否允许拖拽
+        drag: true,
+        //自动轮播
+        time:3000
+    });
+    // 通过监听`nav`事件来完成额外逻辑
+    // --------------
+    slider.on('nav', function(ev) {
+        var pageIndex = ev.pageIndex;
+        cursors.forEach(function(cursor, index) {
+            if (index === pageIndex) {
+                cursor.className = 'z-active';
+            } else {
+                cursor.className = '';
+            }
+        })
+    })
+    slider.nav(2)
+    </script>
+</body>
+
+</html>
