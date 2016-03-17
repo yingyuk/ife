@@ -1,0 +1,13 @@
+/*
+* @Author: Yuk
+* @Date:   2016-03-17 21:23:00
+* @Last Modified by:   Yuk
+* @Last Modified time: 2016-03-17 21:44:44
+*/
+
+.parent {
+    display: flex;
+}
+.center {
+    flex: 1;
+}

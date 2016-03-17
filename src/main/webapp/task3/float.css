@@ -1,0 +1,30 @@
+/*
+* @Author: Yuk
+* @Date:   2016-03-17 21:22:07
+* @Last Modified by:   Yuk
+* @Last Modified time: 2016-03-17 22:07:18
+*/
+
+.left, .right, .center {
+    float: left;
+}
+.center {
+    width: 100%;
+    padding: 0;
+    border: none;
+    background: #eee;
+}
+.centerCnt {
+    height: 400px;
+    margin: 0 150px 0 220px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    background: #fff;
+}
+.left {
+    margin-left: -100%;
+}
+.right {
+    margin-left: -150px;
+}

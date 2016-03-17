@@ -1,0 +1,27 @@
+/*
+* @Author: Yuk
+* @Date:   2016-03-17 21:21:19
+* @Last Modified by:   Yuk
+* @Last Modified time: 2016-03-17 21:42:25
+*/
+.parent{
+position: relative;
+}
+.left,
+.center,
+.right {
+    position: absolute;
+}
+
+.left {
+    left: 0;
+}
+
+.center {
+    left: 220px;
+    right: 140px;
+}
+
+.right {
+    right: 0;
+}

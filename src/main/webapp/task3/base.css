@@ -1,0 +1,68 @@
+/*
+* @Author: Yuk
+* @Date:   2016-03-17 21:20:14
+* @Last Modified by:   Yuk
+* @Last Modified time: 2016-03-17 22:05:09
+*/
+
+* {
+    padding: 0;
+    margin: 0;
+}
+.f-cb:after {
+    display: block;
+    clear: both;
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+    content: ".";
+}
+.f-cb {
+    zoom: 1;
+}
+.f-fl {
+    float: left;
+}
+.f-fr {
+    float: right;
+}
+.parent {
+    margin: 10px;
+    height: 510px;
+    background: #eee;
+    padding: 10px;
+}
+.left, .center, .right {
+    background: #fff;
+    margin: 10px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    padding: 10px;
+}
+.left {
+    width: 200px;
+    height: 200px;
+}
+.right {
+    width: 120px;
+}
+.center {
+    height: 400px;
+}
+.left .teamLogo, .right .logo {
+    width: 80px;
+    height: 80px;
+    background: #eee;
+}
+.left .teamLogo {
+    margin-right: 10px;
+}
+
+/*---------------*/
+
+.center .intr {
+    text-indent: 2em;
+}
+.right .logo {
+    margin: 10px;
+}
