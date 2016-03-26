@@ -1,0 +1,31 @@
+/*
+* @Author: Yuk
+* @Date:   2016-03-17 23:20:45
+* @Last Modified by:   Yuk
+* @Last Modified time: 2016-03-17 23:47:07
+*/
+
+aside {
+    width: 363px;
+    margin-left: 19px;
+}
+section {
+    margin-right: 454px;
+}
+.f-cb:after {
+    display: block;
+    clear: both;
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+    content: ".";
+}
+.f-cb {
+    zoom: 1;
+}
+.f-fl {
+    float: left;
+}
+.f-fr {
+    float: right;
+}
