@@ -1,0 +1,147 @@
+/*
+* @Author: Yuk
+* @Date:   2016-03-24 20:01:30
+* @Last Modified by:   Yuk
+* @Last Modified time: 2016-03-25 00:18:24
+*/
+
+body {}
+
+.doc {
+    margin: 0 auto;
+    width: 980px;
+    height: 1386px;
+    font: 12px/28px '微软雅黑';
+    text-align: center;
+}
+
+.f-fl {
+    float: left;
+}
+
+.f-fr {
+    float: right;
+}
+
+.f-cb:after {
+    display: block;
+    visibility: hidden;
+    clear: both;
+    height: 0;
+    content: '.';
+}
+
+.top {
+    position: relative;
+    width: 892px;
+    line-height: 16px;
+    text-align: left;
+}
+
+.top:before {
+    display: block;
+    width: 110px;
+    height: 61px;
+    content: ' ';
+    background: #d45d5c;
+}
+
+.logo:after,
+time:after {
+    display: inline-block;
+    width: 0;
+    height: 61px;
+    content: '';
+    vertical-align: text-bottom;
+    background: #ccc;
+}
+
+.top .logo {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-family: '黑体';
+    color: #fff;
+}
+
+.top time {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: #d45d5c;
+    font-family: '黑体';
+}
+
+.top:after {
+    display: block;
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: #938e8c;
+}
+
+
+/*--------------------------*/
+
+.cnt {
+    position: relative;
+}
+
+header {
+    width: 203px;
+    position: absolute;
+    right: 0;
+    word-break: break-all;
+    text-align: left;
+}
+
+header:before {
+    display: block;
+    content: '';
+    width: 203px;
+    height: 2px;
+    background: #cc8091;
+}
+
+header h1 {
+    font: 24px/30px "Microsoft YaHei";
+    color: #400;
+    text-transform: uppercase;
+    text-decoration: underline;
+    /*border-bottom: 1px solid #aaa;*/
+}
+header h1:first-
+header h2:first-letter {
+    font-size: 24px;
+    text-decoration: none;
+
+}
+
+header h1:after {
+	margin-top: -6px;
+    display: block;
+    content: '';
+    width: 203px;
+    height: 2px;
+    background: #cc8091;
+}
+
+header h2 {
+    font: 12px/10px #676767 '楷体';
+}
+
+.num {
+    font: 116px #75b86b '微软雅黑';
+}
+
+.cssc {
+    font: 55px #cc8091 '微软雅黑';
+}
+
+.css {
+    font-size: 21px;
+}
+
+.desc {
+    font-size: 12px;
+}

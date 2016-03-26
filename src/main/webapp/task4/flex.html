@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>task4</title>
+</head>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rectangle {
+    width: 400px;
+    height: 200px;
+    background: #ccc;
+    overflow: hidden;
+    position: relative;
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #fc0;
+    position: absolute;
+}
+
+.lt {
+    left: -50px;
+    top: -50px;
+}
+
+.rb {
+    left: 100%;
+    top: 100%;
+    margin-left: -50px;
+    margin-top: -50px;
+}
+</style>
+
+<body>
+    <div class="container">
+        <div class="rectangle">
+            <div class="circle lt"></div>
+            <div class="circle rb"></div>
+        </div>
+    </div>
+</body>
+
+</html>
