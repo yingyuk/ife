@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style>
+#wrap {
+    width: 100%;
+    height: 400px;
+    background: gray;
+    text-align: center;
+    transform: rotateX(180deg);
+    overflow: hidden;
+}
+
+#wrap div {
+    vertical-align: top;
+    display: inline-block;
+    width: 20px;
+    background: #aaa;
+    margin: 0 1px;
+}
+</style>
+
+<body>
+    <input type="number" id="input" maxlength="2" min="0" max="100" value="40"></input>
+    <button id="leftIn">左侧入</button>
+    <button id="rightIn">右侧入</button>
+    <button id="leftOut">左侧出</button>
+    <button id="rightOut">右侧出</button>
+    <br>
+    <br>
+    <button id="random">随机生成个数</button>
+    <input type="number" value="30" id="rectNum" min="0" max="100"></input>
+    <br>
+    <br>
+    <label>
+        <input type="number" value="50" id="timer" min="0" max="100"></input>动画间隔时间:</label>
+    <br>
+    <br>
+    <button id="visible">冒泡排序</button>
+    <div id="wrap"></div>
+</body>
+<script>
+function $(id) {
+    return document.getElementById(id);
+}
+var input = $('input');
+var leftIn = $('leftIn');
+var rightIn = $('rightIn');
+var leftOut = $('leftOut');
+var rightOut = $('rightOut');
+var wrap = $('wrap');
+var sort = $('random');
+var timer;
+var visible = $('visible');
+
+var arr = [];
+var len = arr.length;
+var prev, next;
+var nodeArr;
+leftIn.addEventListener('click', function(event) {
+    if (check()) {
+        arr.unshift(input.value);
+        render();
+    }
+})
+
+rightIn.addEventListener('click', function(event) {
+    if (check()) {
+        arr.push(input.value);
+        render();
+    }
+})
+leftOut.addEventListener('click', function(event) {
+    if (check()) {
+        arr.shift(input.value);
+        render();
+    }
+})
+rightOut.addEventListener('click', function(event) {
+    if (check()) {
+        arr.pop(input.value);
+        render();
+    }
+})
+random.addEventListener('click', function(event) {
+    arr = [];
+    for (var i = 0; i < $('rectNum').value; i++) {
+        arr[i] = Math.ceil(Math.random() * 90 + 10);
+    }
+    render();
+});
+visible.addEventListener('click', function(event) {
+    timer = $('timer').value;
+    len = arr.length;
+    if (len > 0) {
+        sortFunc();
+    }
+});
+
+function sortFunc() {
+    if (len > 1) {
+        len--;
+        travelFrom(0)
+    } else {
+        arr = arr.sort(function(prev, next) {
+            return prev - next;
+        })
+        render();
+        changeColor();
+    }
+}
+
+function changeColor() {
+    var alen = arr.length;
+    nodeArr = [].slice.call(wrap.querySelectorAll('*'));
+    var i = 0;
+    var intver = setInterval(function() {
+        nodeArr[i].style.background = 'white';
+        i++;
+        if (i == alen) {
+            clearInterval(intver);
+        }
+    }, timer);
+}
+
+function travelFrom(i) {
+    if (i == len) {
+        sortFunc();
+        return;
+    }
+    nodeArr = [].slice.call(wrap.querySelectorAll('*'));
+    prev = nodeArr[i];
+    next = nodeArr[i + 1];
+    if (compare(prev, next)) {
+        change(prev, next, wrap, travelFrom, i + 1)
+    } else {
+        travelFrom(i + 1)
+    }
+}
+
+function compare(prev, next) {
+    if (parseInt(prev.style.height) > parseInt(next.style.height)) {
+        return true;
+    }
+    return false;
+}
+
+function change(prev, next, parent, callback, value) {
+    var station = next.cloneNode(true);
+    next.style.background = '#ccc';
+    prev.style.background = '#fff';
+    setTimeout(function() {
+        parent.replaceChild(station, prev);
+        parent.replaceChild(prev, next);
+        prev.style.background = '#aaa';
+        callback(value);
+    }, timer)
+}
+
+function check() {
+    if (input.value < 10) {
+        return false;
+    }
+    if (arr.length >= 60) {
+        alert('不能超过60个数!')
+        return false;
+    }
+    return true;
+}
+
+function render() {
+    wrap.innerHTML = '';
+    for (var key in arr) {
+        var num = document.createElement('div');
+        addEvent(num, key);
+        num.style.height = arr[key] * 4 + 'px';
+        wrap.appendChild(num);
+    }
+}
+render();
+
+function addEvent(node, index) {
+    node.addEventListener('click', function(event) {
+        delArr(node, index);
+    })
+}
+
+function delArr(node, index) {
+    wrap.removeChild(node);
+    arr.splice(index, 1)
+}
+</script>
+
+</html>

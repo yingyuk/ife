@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style>
+#wrap * {
+    display: inline-block;
+    padding: 0 5px;
+    background: red;
+    margin: 10px;
+}
+</style>
+
+<body>
+    <input type="text" id="input"></input>
+    <button id="leftIn">左侧入</button>
+    <button id="rightIn">右侧入</button>
+    <button id="leftOut">左侧出</button>
+    <button id="rightOut">右侧出</button>
+    <div id="wrap"></div>
+</body>
+<script>
+function $(id) {
+    return document.getElementById(id);
+}
+var input = $('input');
+var leftIn = $('leftIn');
+var rightIn = $('rightIn');
+var leftOut = $('leftOut');
+var rightOut = $('rightOut');
+var wrap = $('wrap');
+
+var Arr = [];
+leftIn.addEventListener('click', function(event) {
+    Arr.unshift(input.value);
+    render();
+})
+rightIn.addEventListener('click', function(event) {
+    Arr.push(input.value);
+    render();
+})
+leftOut.addEventListener('click', function(event) {
+    Arr.shift(input.value);
+    render();
+})
+rightOut.addEventListener('click', function(event) {
+    Arr.pop(input.value);
+    render();
+})
+
+function render() {
+    wrap.innerHTML = '';
+    for (var key in Arr) {
+        var num = document.createElement('div');
+        addEvent(num, key);
+        num.textContent = Arr[key];
+        wrap.appendChild(num);
+    }
+}
+
+function addEvent(node, index) {
+    node.addEventListener('click', function(event) {
+        delArr(node, index);
+    })
+}
+
+function delArr(node, index) {
+    wrap.removeChild(node);
+    Arr.splice(index, 1)
+}
+</script>
+
+</html>
