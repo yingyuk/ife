@@ -45,6 +45,10 @@
 
 <dl id="html">
     <strong>HTML</strong>
+    
+<dt><a href="http://yingyuk.space/ife/task8/task8.html" target="_blank">任务八：响应式网格（栅格化）布局</a></dt>
+    <dd><a href="https://github.com/yingyuk/ife/blob/master/src/main/webapp/task8/task8.html" target="_blank">任务八源码</a></dd>
+    <dd><a href="http://ife.baidu.com/task/detail?taskId=8" target="_blank">任务详情</a></dd>
 
     <dt><a href="http://yingyuk.space/ife/task6/task6.html" target="_blank">任务六：通过HTML及CSS模拟报纸排版</a></dt>
         <dd><a href="https://github.com/yingyuk/ife/blob/master/src/main/webapp/task6/task6.html" target="_blank">任务六源码</a></dd>
