@@ -1,0 +1,181 @@
+body,header{
+
+margin: 0px;
+
+
+}
+
+header{
+           background-color: black;
+           width: 1450px;
+           height: 100px;
+           position: relative;
+}
+header img{
+
+	width: 100%;
+	height: 100%
+}
+header nav{
+
+             position: absolute;
+             right: 30px;
+             top: 50px;
+	
+}
+header nav ul li{
+            display: inline;
+
+
+
+}
+body{
+    background-color: #dedede;
+    width:1450px;
+
+
+
+
+}
+
+.pagelay{
+margin: 3%;
+box-shadow: 0 0 8px #000;
+
+}
+
+.insidelay{
+
+background-color:  #ffffff;
+padding-left: 20px;
+padding-right: 20px;
+padding-bottom: 20px;
+padding-top: 30px;
+
+
+
+}
+
+.secondlabel{
+
+color: #696969;
+padding-bottom: 20px;
+
+}
+.paragraph{
+
+text-indent:   3em;
+line-height: 1.5;
+font-size: 15px;
+}
+.item {
+  list-style: none;
+
+  
+}
+.list{
+  margin-left: 20px;
+  margin-top: 15px;
+ padding-bottom: 29px;
+ 
+
+}
+.picture{
+  width:550px;
+ 
+ border: 1px solid gray;
+  margin-left: 40px;
+margin-bottom: 20px;
+padding: 20px;
+
+}
+
+.picture1{
+  text-align: center;
+  font-size: small;
+ margin-top: 10px;
+ margin-bottom: 10px;
+
+}
+
+
+
+
+
+
+  .th{
+  background-color: #080808;
+  font-size: 1.1em;
+  color: #F8F8F8;
+  padding: 2px;
+}
+ .cell{
+
+ padding: 2px;
+
+ }
+.lastcell{
+  padding: 2px;
+  background-color: #A0A0A0;
+}
+
+
+.sidehead{
+   border-left: 3px #ccc solid;
+  line-height: 2em;
+  padding-left: 10px;
+   margin: 0;
+
+
+}
+
+#table{
+
+width: 100%;
+border-collapse: collapse;
+margin-top: 3px;
+
+}
+
+.sidedistance{
+
+ margin: 10px 0;
+}
+.sidelay{
+    width: 43%;
+    display: inline-block;
+    vertical-align: top;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.mail{
+
+  margin-left: 40%;
+  padding-left: 48px;
+  color: #888888;
+  font-size: x-small;
+ 
+}
+
+#texarea{
+height: 200px;
+width: 700px;
+
+}
+button{
+  cursor: pointer;
+width: 100%;
+background-color: blue;
+border-radius: 5px;
+border: 0;
+margin-top: 8px;
+}
+.sure{
+  line-height: 30px;
+  color: rgb(255,255,255);
+}
+footer{
+
+ text-align: center;
+}
