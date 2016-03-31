@@ -1,0 +1,1 @@
+流程：1设计尺寸  基准值=宽度/100  2fontsize= document.documentElement.clientWidth/基准值  3 其他在尺存/100 

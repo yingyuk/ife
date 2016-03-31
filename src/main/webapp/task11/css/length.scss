@@ -1,0 +1,145 @@
+@charset "UTF-8";
+
+
+%ub{display: -webkit-box !important;
+	display: box !important;
+	position:relative; }
+
+ %ub-hor{ box-orient: horizontal; -webkit-box-orient: horizontal; }  
+ %ub-ver{ box-orient: vertical; -webkit-box-orient: vertical; }
+
+ %ub-rev{box-direction: reverse; -webkit-box-direction:reverse;}
+
+ %ub-ac{box-align:center; -webkit-box-align:center;}
+ %ub-ae{box-align:end; -webkit-box-align:end;}
+
+ %ub-pc{box-pack:center; -webkit-box-pack:center;}
+ %ub-pe{box-pack:end; -webkit-box-pack:end;}
+ %ub-pj{box-pack:justify; -webkit-box-pack: justify;}
+
+
+%ub-fh{width:100%}
+%ub-fv{height:100%}
+
+ %ub-f1{box-flex:1; -webkit-box-flex:1;}
+ %ub-f2{box-flex:2; -webkit-box-flex:2;}
+ %ub-f3{box-flex:3; -webkit-box-flex:3;}
+
+
+%ub-bor{border-width:1px; border-style:solid}
+
+%ub-img{background-size: cover; background-position: center;}
+%ub-img1{background-size: contain; background-position: center;}
+
+
+
+%ub-img{background-size: cover; background-repeat: no-repeat; background-position: center center;}
+%ub-img1{background-size: contain; background-repeat: no-repeat; background-position: center center;}
+
+
+
+%bg_blue{background-color: #91d4da}
+
+
+$white:white;
+
+@mixin length($name,$px){
+   #{$name}:($px / 100)* 1rem;
+};
+
+
+@mixin paddings($name,$tpx,$rpx,$bpx,$lpx) {
+
+  #{$name}-top: ($tpx / 100 ) *1rem ;
+  #{$name}-right: ($rpx / 100 ) *1rem ;
+  #{$name}-bottom: ($bpx / 100 ) *1rem ;
+  #{$name}-left: ($lpx / 100 ) *1rem ;
+  
+
+
+};
+
+html{font-family: "黑体";}
+body{}
+.bg{background-image: url(task.png) ;}
+
+.title{ @include length(height,117); @extend %ub; @extend %ub-fh;
+       div{@extend %ub; @extend %ub-f1; @extend %ub-ac;   @extend %bg_blue; color:$white;  }
+       div:nth-child(1),div:nth-child(3){width:2rem;}
+       div:nth-child(2){@extend %ub-pc;}
+}
+.nav {
+	@include length(height,116); @extend %ub;
+	 div{@extend %ub; @extend %ub-f1;@extend %ub-ver; @extend %ub-ac ; @extend %ub-pc ; 
+ 		
+	 };
+	 div:nth-child(2){border-bottom:2px solid #91d4da;}
+	 
+}
+
+.imagebox{
+	@include length(height,547);
+	background-image: url(../img/task1.png) ; @extend %ub-img1;
+
+}
+
+.icon{
+	@include length(height,300); @extend %ub; 
+	 div{@extend %ub; @extend %ub-f1; @extend %ub-ae;  @extend %ub-pc;  background-image: url(../img/task.png);@extend %ub-img1; margin:0.15rem; background-position: center 17.5%;}
+
+}
+
+.num {
+	 @extend %ub; @include paddings(margin,0,30,0,30) ; @include paddings(padding,56,0,56,0) ;font-family: "黑体"; border-top:2px solid #dedede;
+	 div{@extend %ub; @extend %ub-f1;@extend %ub-ver;@include paddings(padding,6,0,6,0);
+ 		p{@extend %ub; @extend %ub-ver; @extend %ub-ac };
+ 		p:nth-child(1) {@include length(height,188);  @extend %ub-img1;};
+ 		p:nth-child(2) {font-weight: bold; font-size: 20px;};
+ 		.first{ background-image: url(../img/task3.png);}
+ 		.second{ background-image: url(../img/task4.png);}
+ 		.three{ background-image: url(../img/task5.png);}
+	 };
+	 div:nth-child(1){border-right:2px solid #dedede;}
+	 div:nth-child(3){border-left:2px solid #dedede;}
+}
+
+.null{@include length(height,36); background: #f5f5f5 }
+
+.moudle{
+	@include paddings(margin,0,30,0,30) ;
+	.title{@extend %ub; @extend %ub-ac;@include length(height,118); background: #fff;border-bottom: 1px solid #dedede; }
+    .box{@extend %ub; @extend %ub-ac; @include paddings(margin,38,0,0,0) ;
+		    div{@include length(height,224);
+				p{@extend %ub; @extend %ub-ac;  @extend %ub-pc;@include length(height,102);@include length(width,318);background:#f8f8f8; font-family: "黑体";};
+		        p:first-child{@include paddings(margin,0,0,26,0);}
+		       }
+	
+			div:nth-child(1){ @include length(width,240); background-image: url(../img/task6.png); @extend %ub-img1; border:1px solid yellow;}
+            div:nth-child(2),div:nth-child(3){@include paddings(margin,0,0,0,26) }
+            
+     }
+     .box-second{@include paddings(padding,0,0,26,0);}
+}
+
+
+.actial{@extend %ub-ver; 
+	@extend %ub; @extend %ub-ac; 
+   .box{@extend %ub; @extend %ub-ac;@include paddings(padding,22,22,22,22); border-bottom: 1px solid #dedede;
+   	        
+			.image{@extend %ub;  @include length(height,196); @include length(width,280);  background-image: url(../img/task7.png);@extend %ub-img1; }
+            .word{width:6.6rem; @include length(height,196); margin-left: 0.1rem; word-wrap:break-word; word-break:normal;
+				div:first-child { @include length(height,146)}
+            } 
+      }
+
+
+    .otherbox{
+    	@extend  %ub; @extend %ub-ver; @include length(height,388); @include paddings(padding,22,22,22,22); border-bottom: 1px solid #dedede;
+         
+         .title{@extend  %ub; @extend %ub-ac; @include length(height,100);}
+         .imageboxs{@extend  %ub; 
+         	 div{@include length(width,308); @include length(height,206);  background-image: url(../img/task7.png);@extend %ub-img1; }
+         } 
+         .time{@extend  %ub; @extend %ub-ac;@include length(height,81);}
+     }
+}

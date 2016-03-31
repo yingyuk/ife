@@ -1,0 +1,180 @@
+@charset "UTF-8";
+.title, .title div, .nav, .nav div, .icon, .icon div, .num, .num div, .num div p, .moudle .title, .moudle .box, .moudle .box div p, .actial, .actial .box, .actial .box .image, .actial .otherbox, .actial .otherbox .title, .actial .otherbox .imageboxs, .actial .otherbox .time {
+  display: -webkit-box !important;
+  display: box !important;
+  position: relative; }
+
+.nav div, .num div, .num div p, .actial, .actial .otherbox {
+  box-orient: vertical;
+  -webkit-box-orient: vertical; }
+
+.title div, .nav div, .num div p, .moudle .title, .moudle .box, .moudle .box div p, .actial, .actial .box, .actial .otherbox .title, .actial .otherbox .time {
+  box-align: center;
+  -webkit-box-align: center; }
+
+.icon div {
+  box-align: end;
+  -webkit-box-align: end; }
+
+.title div:nth-child(2), .nav div, .icon div, .moudle .box div p {
+  box-pack: center;
+  -webkit-box-pack: center; }
+
+.title {
+  width: 100%; }
+
+.title div, .nav div, .icon div, .num div {
+  box-flex: 1;
+  -webkit-box-flex: 1; }
+
+.imagebox, .icon div, .num div p:nth-child(1), .moudle .box div:nth-child(1), .actial .box .image, .actial .otherbox .imageboxs div {
+  background-size: contain;
+  background-position: center; }
+
+.imagebox, .icon div, .num div p:nth-child(1), .moudle .box div:nth-child(1), .actial .box .image, .actial .otherbox .imageboxs div {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center; }
+
+.title div {
+  background-color: #91d4da; }
+
+html {
+  font-family: "黑体"; }
+
+.bg {
+  background-image: url(task.png); }
+
+.title {
+  height: 1.17rem; }
+  .title div {
+    color: white; }
+  .title div:nth-child(1), .title div:nth-child(3) {
+    width: 2rem; }
+
+.nav {
+  height: 1.16rem; }
+  .nav div:nth-child(2) {
+    border-bottom: 2px solid #91d4da; }
+
+.imagebox {
+  height: 5.47rem;
+  background-image: url(../img/task1.png); }
+
+.icon {
+  height: 3rem; }
+  .icon div {
+    background-image: url(../img/task.png);
+    margin: 0.15rem;
+    background-position: center 17.5%; }
+
+.num {
+  margin-top: 0rem;
+  margin-right: 0.3rem;
+  margin-bottom: 0rem;
+  margin-left: 0.3rem;
+  padding-top: 0.56rem;
+  padding-right: 0rem;
+  padding-bottom: 0.56rem;
+  padding-left: 0rem;
+  font-family: "黑体";
+  border-top: 2px solid #dedede; }
+  .num div {
+    padding-top: 0.06rem;
+    padding-right: 0rem;
+    padding-bottom: 0.06rem;
+    padding-left: 0rem; }
+    .num div p:nth-child(1) {
+      height: 1.88rem; }
+    .num div p:nth-child(2) {
+      font-weight: bold;
+      font-size: 20px; }
+    .num div .first {
+      background-image: url(../img/task3.png); }
+    .num div .second {
+      background-image: url(../img/task4.png); }
+    .num div .three {
+      background-image: url(../img/task5.png); }
+  .num div:nth-child(1) {
+    border-right: 2px solid #dedede; }
+  .num div:nth-child(3) {
+    border-left: 2px solid #dedede; }
+
+.null {
+  height: 0.36rem;
+  background: whitesmoke; }
+
+.moudle {
+  margin-top: 0rem;
+  margin-right: 0.3rem;
+  margin-bottom: 0rem;
+  margin-left: 0.3rem; }
+  .moudle .title {
+    height: 1.18rem;
+    background: #fff;
+    border-bottom: 1px solid #dedede; }
+  .moudle .box {
+    margin-top: 0.38rem;
+    margin-right: 0rem;
+    margin-bottom: 0rem;
+    margin-left: 0rem; }
+    .moudle .box div {
+      height: 2.24rem; }
+      .moudle .box div p {
+        height: 1.02rem;
+        width: 3.18rem;
+        background: #f8f8f8;
+        font-family: "黑体"; }
+      .moudle .box div p:first-child {
+        margin-top: 0rem;
+        margin-right: 0rem;
+        margin-bottom: 0.26rem;
+        margin-left: 0rem; }
+    .moudle .box div:nth-child(1) {
+      width: 2.4rem;
+      background-image: url(../img/task6.png);
+      border: 1px solid yellow; }
+    .moudle .box div:nth-child(2), .moudle .box div:nth-child(3) {
+      margin-top: 0rem;
+      margin-right: 0rem;
+      margin-bottom: 0rem;
+      margin-left: 0.26rem; }
+  .moudle .box-second {
+    padding-top: 0rem;
+    padding-right: 0rem;
+    padding-bottom: 0.26rem;
+    padding-left: 0rem; }
+
+.actial .box {
+  padding-top: 0.22rem;
+  padding-right: 0.22rem;
+  padding-bottom: 0.22rem;
+  padding-left: 0.22rem;
+  border-bottom: 1px solid #dedede; }
+  .actial .box .image {
+    height: 1.96rem;
+    width: 2.8rem;
+    background-image: url(../img/task7.png); }
+  .actial .box .word {
+    width: 6.6rem;
+    height: 1.96rem;
+    margin-left: 0.1rem;
+    word-wrap: break-word;
+    word-break: normal; }
+    .actial .box .word div:first-child {
+      height: 1.46rem; }
+.actial .otherbox {
+  height: 3.88rem;
+  padding-top: 0.22rem;
+  padding-right: 0.22rem;
+  padding-bottom: 0.22rem;
+  padding-left: 0.22rem;
+  border-bottom: 1px solid #dedede; }
+  .actial .otherbox .title {
+    height: 1rem; }
+  .actial .otherbox .imageboxs div {
+    width: 3.08rem;
+    height: 2.06rem;
+    background-image: url(../img/task7.png); }
+  .actial .otherbox .time {
+    height: 0.81rem; }
