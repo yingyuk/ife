@@ -50,29 +50,33 @@
     <dd><a href="https://github.com/yingyuk/ife/blob/master/src/main/webapp/task8/task8.html" target="_blank">任务八源码</a></dd>
     <dd><a href="http://ife.baidu.com/task/detail?taskId=8" target="_blank">任务详情</a></dd>
 
-    <dt><a href="http://yingyuk.space/ife/task6/task6.html" target="_blank">任务六：通过HTML及CSS模拟报纸排版</a></dt>
-        <dd><a href="https://github.com/yingyuk/ife/blob/master/src/main/webapp/task6/task6.html" target="_blank">任务六源码</a></dd>
-        <dd><a href="http://ife.baidu.com/task/detail?taskId=6" target="_blank">任务详情</a></dd>
+<dt><a href="http://yingyuk.space/ife/task7/task7.html" target="_blank">任务七：实现常见的技术产品官网的页面架构及样式布局</a></dt>
+    <dd><a href="https://github.com/yingyuk/ife/blob/master/src/main/webapp/task7/task7.html" target="_blank">任务七源码</a></dd>
+    <dd><a href="http://ife.baidu.com/task/detail?taskId=7" target="_blank">任务详情</a></dd>
 
-    <dt><a href="http://yingyuk.space/ife/task5/task5.html" target="_blank">任务五：零基础HTML及CSS编码（二）</a></dt>
-        <dd><a href="https://github.com/yingyuk/ife/blob/master/src/main/webapp/task5/task5.html" target="_blank">任务五源码</a></dd>
-        <dd><a href="http://7xrp04.com1.z0.glb.clouddn.com/task_1_5_1.jpg" target="_blank">参考示例图</a></dd>
+<dt><a href="http://yingyuk.space/ife/task6/task6.html" target="_blank">任务六：通过HTML及CSS模拟报纸排版</a></dt>
+    <dd><a href="https://github.com/yingyuk/ife/blob/master/src/main/webapp/task6/task6.html" target="_blank">任务六源码</a></dd>
+    <dd><a href="http://ife.baidu.com/task/detail?taskId=6" target="_blank">任务详情</a></dd>
 
-    <dt><a href="http://yingyuk.space/ife/task4/task4.html" target="_blank">任务四：定位和居中问题</a></dt>
-        <dd><a href="https://github.com/yingyuk/ife/blob/master/src/main/webapp/task4/task4.html" target="_blank">任务四源码</a></dd>
-        <dd><a href="http://7xrp04.com1.z0.glb.clouddn.com/task_1_4_1.png" target="_blank">参考示例图</a></dd>
+<dt><a href="http://yingyuk.space/ife/task5/task5.html" target="_blank">任务五：零基础HTML及CSS编码（二）</a></dt>
+    <dd><a href="https://github.com/yingyuk/ife/blob/master/src/main/webapp/task5/task5.html" target="_blank">任务五源码</a></dd>
+    <dd><a href="http://7xrp04.com1.z0.glb.clouddn.com/task_1_5_1.jpg" target="_blank">参考示例图</a></dd>
 
-    <dt><a href="http://yingyuk.space/ife/task3/task3.html" target="_blank">任务三：三栏式布局 完成效果</a></dt>
-        <dd><a href="https://github.com/yingyuk/ife/blob/master/src/main/webapp/task3/task3.html" target="_blank">任务三源码</a></dd>
-        <dd><a href="http://7xrp04.com1.z0.glb.clouddn.com/task_1_3_1.png" target="_blank">参考示例图</a></dd>
+<dt><a href="http://yingyuk.space/ife/task4/task4.html" target="_blank">任务四：定位和居中问题</a></dt>
+    <dd><a href="https://github.com/yingyuk/ife/blob/master/src/main/webapp/task4/task4.html" target="_blank">任务四源码</a></dd>
+    <dd><a href="http://7xrp04.com1.z0.glb.clouddn.com/task_1_4_1.png" target="_blank">参考示例图</a></dd>
 
-    <dt><a href="http://yingyuk.space/ife/task2/task2.html" target="_blank">任务二：零基础HTML及CSS编码（一） 完成效果</<a href=""></a>></dt>
-        <dd><a href="https://github.com/yingyuk/ife/blob/master/src/main/webapp/task2/task2.html" target="_blank">任务二源码</a></dd>
-        <dd><a href="http://7xrp04.com1.z0.glb.clouddn.com/task_1_2_1.jpg" target="_blank">参考示例图</a></dd>
+<dt><a href="http://yingyuk.space/ife/task3/task3.html" target="_blank">任务三：三栏式布局 完成效果</a></dt>
+    <dd><a href="https://github.com/yingyuk/ife/blob/master/src/main/webapp/task3/task3.html" target="_blank">任务三源码</a></dd>
+    <dd><a href="http://7xrp04.com1.z0.glb.clouddn.com/task_1_3_1.png" target="_blank">参考示例图</a></dd>
 
-    <dt><a href="http://yingyuk.space/ife/task1/task1.html" target="_blank">任务一：零基础HTML编码 完成效果</a></dt>
-        <dd><a href="https://github.com/yingyuk/ife/blob/master/src/main/webapp/task1/task1.html" target="_blank">任务一源码</a></dd>
-        <dd><a href="http://7xrp04.com1.z0.glb.clouddn.com/task_1_1_1.jpg" target="_blank">参考示例图</a></dd>
+<dt><a href="http://yingyuk.space/ife/task2/task2.html" target="_blank">任务二：零基础HTML及CSS编码（一） 完成效果</<a href=""></a>></dt>
+    <dd><a href="https://github.com/yingyuk/ife/blob/master/src/main/webapp/task2/task2.html" target="_blank">任务二源码</a></dd>
+    <dd><a href="http://7xrp04.com1.z0.glb.clouddn.com/task_1_2_1.jpg" target="_blank">参考示例图</a></dd>
+
+<dt><a href="http://yingyuk.space/ife/task1/task1.html" target="_blank">任务一：零基础HTML编码 完成效果</a></dt>
+    <dd><a href="https://github.com/yingyuk/ife/blob/master/src/main/webapp/task1/task1.html" target="_blank">任务一源码</a></dd>
+    <dd><a href="http://7xrp04.com1.z0.glb.clouddn.com/task_1_1_1.jpg" target="_blank">参考示例图</a></dd>
 </dl>
 
 

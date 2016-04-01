@@ -1,0 +1,654 @@
+/*
+* @Author: yingyuk
+* @Date:   2016-03-31 11:16:13
+* @Last Modified by:   yingyuk
+* @Last Modified time: 2016-04-01 11:04:48
+*/
+
+@charset "utf-8";
+%pr {
+    position: relative;
+}
+
+%ma {
+    margin: 0 auto;
+}
+
+%trag {
+    display: block;
+    position: absolute;
+    top: 50%;
+    width: 0;
+    height: 0;
+    content: '';
+    transform: translateY(-50%);
+    vertical-align: middle;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+}
+
+$colorArr:( mainCL:#e74f4d, fontCL:#787b83);
+@mixin bg($positionX:null, $positionY:null, $url:url(../img/sprite.png), $a:no-repeat) {
+    background: $url $a $positionX $positionY;
+}
+
+@function colors($color) {
+    @return map-get($colorArr, $color);
+}
+
+$mainCL: #e74f4d;
+$fontCL: #787b83;
+$fontCL2: #fff;
+$bgCL:#ececec;
+$bgCL2:#f7f7f7;
+.container {
+    @extend %pr;
+    width: 1280px;
+    @extend %ma;
+}
+
+#header {
+    height: 57px;
+    padding-left: 59px;
+    line-height: 57px;
+    .navbar-header {
+        font: 21px/57px "黑体";
+        &:before {
+            $len: 31px;
+            display: inline-block;
+            width: $len;
+            height: $len;
+            margin: 12px 12px 0 0;
+            content: '';
+            vertical-align: top;
+            @include bg(-20px, -20px);
+        }
+    }
+    .nav {
+        margin-right: 44px;
+        li {
+            display: inline-block;
+            a {
+                padding: 16px 23px;
+                font-size: 14px;
+                line-height: 1.929;
+                color: $fontCL;
+                &.login {
+                    &:before {
+                        display: inline-block;
+                        width: 13px;
+                        height: 17px;
+                        margin-right: 7px;
+                        content: '';
+                        vertical-align: middle;
+                        @include bg(-80px, -20px);
+                    }
+                    color: $mainCL;
+                }
+            }
+            &.active {
+                a {
+                    color: $mainCL;
+                    border: {
+                        bottom: 3px solid #e74f4d;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#banner {
+    @extend %pr;
+    box-sizing: border-box;
+    height: 690px;
+    @include bg((), (), url(../img/life.jpg));
+    background-size: cover;
+    color: $fontCL2;
+    h1 {
+        margin-left: 115px;
+        padding-top: 210px;
+        font: 60px/108px 'Microsoft YaHei';
+    }
+    %ml {
+        margin-left: 126px;
+    }
+    p {
+        @extend %ml;
+        font: 21px/33px 'Microsoft YaHei';
+    }
+    button {
+        @extend %ml;
+        width: 330px;
+        height: 63px;
+        margin-top: 60px;
+        color: $fontCL2;
+        font-size: 30px;
+        line-height: 63px;
+        border: none;
+        background: #fd323d;
+    }
+}
+
+#desc {
+    height: 250px;
+    ul {
+        li {
+            box-sizing: border-box;
+            width: 25%;
+            text-align: center;
+            &:before {
+                display: block;
+                $len: 42px;
+                width: $len;
+                height: $len;
+                margin: 45px auto;
+                content: '';
+                @include bg;
+            }
+            @for $i from 1 through 4 {
+                &:nth-child(#{$i}):before {
+                    background-position: 80px-100px*$i -140px;
+                }
+            }
+            p {
+                padding: 0 80px;
+            }
+            &+li {
+                p {
+                    border-left: 2px solid #aba6a5;
+                }
+            }
+        }
+    }
+}
+
+#about-world {
+    @extend %pr;
+    box-sizing: border-box;
+    height: 360px;
+    padding-top: 90px;
+    background: $bgCL;
+    p {
+        font: 53.6px/1 'SimHei';
+        text-align: center;
+        color: rgba( 50, 51, 51, .5);
+        &:before {
+            display: block;
+            width: 91px;
+            height: 91px;
+            margin: 0 auto 50px;
+            content: '';
+            @include bg(-250px, -20px);
+        }
+    }
+}
+
+#cityInfo {
+    height: 340px;
+    font-size: 0;
+    text-align: center;
+    @include bg((), (), url(../img/map.jpg));
+    background-position: cover;
+    color: $fontCL2;
+    h3 {
+        padding-top: 50px;
+        font-size: 21px;
+        line-height: 45px;
+        text-align: center;
+        &:after {
+            display: block;
+            width: 30px;
+            height: 2px;
+            margin: 0 auto;
+            content: '';
+            background: $fontCL2;
+        }
+    }
+    p {
+        font-size: 12px;
+        line-height: 53px;
+        text-align: center;
+        color: rgba( 255, 255, 255, .8);
+    }
+    form {
+        .select {
+            display: inline-block;
+            position: relative;
+            width: 234px;
+            height: 34px;
+            margin: 0 9px;
+            box-sizing: border-box;
+            border: none;
+            font-size: 12px;
+            color: #000;
+            text-align: left;
+            vertical-align: top;
+            background: #fff;
+            border: {
+                top: 1px solid transparent;
+                right: 1px solid #e1e3e2;
+                left: 1px solid #e1e3e2;
+            }
+            ;
+            span {
+                height: 34px;
+                line-height: 34px;
+                padding: 11px;
+                &:after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    width: 17px;
+                    height: 17px;
+                    right: 8px;
+                    top: 8px;
+                    @include bg(-360px, -80px);
+                }
+            }
+            ul {
+                position: relative;
+                top: -1px;
+                left: -1px;
+                width: 234px;
+                box-sizing: border-box;
+                li {
+                    display: none;
+                    padding-left: 30px;
+                    background: $bgCL;
+                    color: #000;
+                    &:hover {
+                        background: url(../img/sprite.png) no-repeat -360px -20px $mainCL;
+                    }
+                }
+            }
+            &:focus {
+                border-left: 1px solid $mainCL;
+                border-right: 1px solid $mainCL;
+                border-top: 1px solid $mainCL;
+                ul {
+                    border-left: 1px solid $mainCL;
+                    border-right: 1px solid $mainCL;
+                    border-bottom: 1px solid $mainCL;
+                    li {
+                        display: block;
+                    }
+                }
+            }
+        }
+        button {
+            width: 235px;
+            height: 35px;
+            margin: 0 9px;
+            font-size: 14px;
+            line-height: 1;
+            color: $fontCL2;
+            border: none;
+            background: #be4e48;
+        }
+    }
+}
+
+#salon {
+    height: 604px;
+    text-align: center;
+    background: $bgCL2;
+    .city {
+        display: inline-block;
+        width: 219px;
+        height: 389px;
+        margin: 0 18px;
+        padding-top: 100px;
+        vertical-align: middle;
+        img {
+            padding: 12px 7px;
+            border: 1px solid #e0e0e0;
+            border-bottom: 1px solid #f5f5f5;
+            background: #fff;
+        }
+        h3 {
+            font-size: 13px;
+            font-weight: bold;
+            line-height: 3;
+            color: #323333;
+        }
+        p {
+            font-size: 11px;
+            line-height: 1;
+            color: #8b8c8d;
+        }
+        &.select {
+            h3 {
+                margin-top: 5px;
+                font-size: 18px;
+                line-height: 1;
+            }
+            p {
+                font-size: 11px;
+                line-height: 29px;
+            }
+        }
+    }
+}
+
+#m-sliders {
+    height: 565px;
+    text-align: center;
+    .sld-info {
+        width: 850px;
+        height: 100%;
+        @include bg((), (), url(../img/time.jpg));
+        color: $fontCL2;
+        padding-top: 140px;
+        box-sizing: border-box;
+        h3 {
+            font-size: 49.5px;
+            line-height: 1;
+        }
+        h2 {
+            font-size: 157.788px;
+            line-height: 1;
+        }
+        p {
+            font-size: 21.915px;
+            line-height: 1;
+        }
+        position:relative;
+        &:before {
+            @extend %trag;
+            right: 0;
+            border-right: 25px solid #fff;
+        }
+    }
+    .sld-desc {
+        padding: 0 70px;
+        overflow: hidden;
+        text-align: center;
+        h3 {
+            position: relative;
+            padding-top: 160px;
+            font-size: 18px;
+            font-weight: bold;
+            span {
+                color: #e74f4d;
+            }
+        }
+        p {
+            margin-top: 21px;
+            font-family: 'SimSun';
+            font-size: 12px;
+            line-height: 2.5;
+            text-align: justify;
+            color: #aaa;
+        }
+        button {
+            width: 103px;
+            height: 31px;
+            margin-top: 42px;
+            border: 1px solid #e74f4d;
+            background: #fff;
+        }
+    }
+    .page-tab {
+        margin-top: 26px;
+        font-size: 0;
+        text-align: center;
+        li {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin: 0 7px;
+            overflow: hidden;
+            line-height: 1;
+            cursor: pointer;
+            border: 1px solid #929292;
+            border-radius: 50%;
+            &.active {
+                background: #929292;
+            }
+        }
+    }
+}
+
+.new-time {
+    height: 520px;
+    .about-more {
+        width: 33.333333%;
+        height: 100%;
+        text-align: center;
+        p {
+            padding-top: 170px;
+            font-family: 'SimHei';
+            font-size: 21px;
+            line-height: 1.446;
+            text-align: center;
+            &:after {
+                display: block;
+                width: 29px;
+                height: 2px;
+                margin: 0 auto;
+                margin: 21px auto 25px;
+                content: '';
+                background: green;
+            }
+        }
+        button {
+            width: 167px;
+            height: 41px;
+            font-size: 21px;
+            line-height: 1;
+            background: transparent;
+        }
+    }
+    .left {
+        background: #e74f4d;
+        p {
+            color: #fff;
+            &:after {
+                background: #fff;
+            }
+        }
+        button {
+            color: #fff;
+            border: 1px solid #fff;
+        }
+    }
+    .center {
+        p {
+            color: #e74f4d;
+            &:after {
+                background: #ababaa;
+            }
+        }
+        button {
+            color: #e74f4d;
+            border: 1px solid #e74f4d;
+        }
+    }
+    .right {
+        background: url(../img/travel.jpg) no-repeat;
+        position: relative;
+        background-position: cover;
+        &:before {
+            @extend %trag;
+            border-left: 25px solid #fff;
+        }
+    }
+}
+
+.volunty {
+    height: 750px;
+    .join {
+        height: 300px;
+        h3 {
+            padding-top: 120px;
+            font-family: 'SimHei';
+            font-size: 21px;
+            line-height: 2;
+            text-align: center;
+            color: #323333;
+            &:after {
+                display: block;
+                width: 30px;
+                margin: 0 auto 12px;
+                content: '';
+                border-top: 1px solid #e74f4d;
+                border-bottom: 1px solid #eb6664;
+            }
+        }
+        p {
+            font-size: 12px;
+            line-height: 1.5;
+            text-align: center;
+            color: #aaa;
+        }
+    }
+    .clause {
+        width: 500px;
+        height: auto;
+        .cnt {
+            width: 290px;
+            margin-left: 140px;
+            li {
+                height: 95px;
+                margin-bottom: 35px;
+                &:after {
+                    text-align: right;
+                    content: 'ˇ more';
+                    display: block;
+                }
+                h3 {
+                    font: 14px/1 'SimHei';
+                    text-align: center;
+                    color: rgba( 35, 24, 21, .8);
+                }
+                a {
+                    $color: rgba( 35, 24, 21, .6);
+                    display: inline-block;
+                    width: 290px;
+                    height: 40px;
+                    font: 12px/1.75 'SimSun';
+                    color: $color;
+                    overflow: hidden;
+                    word-break: break-all;
+                    text-indent: 2em;
+                    &:focus {
+                        position: absolute;
+                        height: auto;
+                        background: $bgCL2;
+                        text-align: justify;
+                        border: 1px solid $color;
+                        border-radius: 5px;
+                        padding: 8px;
+                    }
+                }
+            }
+        }
+    }
+    .profile {
+        width: 640px;
+        overflow: hidden;
+        button {
+            font-size: 14px;
+            font-family: "SimHei";
+            color: #333;
+        }
+    }
+}
+
+.col-md-6 {
+    float: left;
+    width: 50%;
+}
+
+.col-md-12 {
+    width: 100%;
+}
+
+.col-md-6,
+.col-md-12 {
+    box-sizing: border-box;
+    padding: 7px 9px;
+}
+
+.form-control {
+    box-sizing: border-box;
+    width: 100%;
+    height: 40px;
+    padding: 0 15px;
+    font: 12px/40px 'SimSun';
+    color: rgba( 35, 24, 21, .8);
+    border: none;
+    border-right: 1px solid #f3f3f4;
+    border-left: 1px solid #f3f3f4;
+    background: #ededef;
+}
+
+textarea.form-control {
+    height: auto;
+}
+
+footer {
+    position: relative;
+    height: 415px;
+    background: #32363e;
+    .link {
+        text-align: center;
+        color: #fff;
+        h3 {
+            margin-bottom: 9px;
+            padding-top: 90px;
+            font-family: 'SimHei';
+            font-size: 21px;
+            line-height: 1;
+        }
+        p {
+            font-family: 'SimHei';
+            font-size: 12px;
+            line-height: 1.5;
+        }
+    }
+    .form-horizontal {
+        margin-top: 30px;
+        font-size: 0;
+        text-align: center;
+        &:after {
+            display: block;
+            width: 180px;
+            height: 25px;
+            margin: 38px auto 0;
+            content: '';
+            background: url(../img/sprite.png) no-repeat -20px -80px;
+        }
+        .email {
+            width: 430px;
+            height: 40px;
+            margin: 0;
+            border: none;
+        }
+        .submit {
+            width: 80px;
+            height: 40px;
+            margin: 0;
+            color: #fff;
+            border: none;
+            background: #6f7178;
+        }
+    }
+    .copyright {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 57px;
+        font: 12px/57px 'SimSun';
+        color: #fff;
+        background: #2f2f38;
+        .newWorld {
+            margin-left: 100px;
+        }
+        .backTop {
+            margin-right: 40px;
+        }
+    }
+}
