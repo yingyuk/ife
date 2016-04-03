@@ -3,7 +3,7 @@
 * @Author: yingyuk
 * @Date:   2016-03-31 11:16:13
 * @Last Modified by:   yingyuk
-* @Last Modified time: 2016-04-01 11:04:48
+* @Last Modified time: 2016-04-02 14:46:45
 */
 .container, #banner, #about-world {
   position: relative; }
@@ -394,31 +394,41 @@
       .volunty .clause .cnt li {
         height: 95px;
         margin-bottom: 35px; }
-        .volunty .clause .cnt li:after {
-          text-align: right;
-          content: 'ˇ more';
-          display: block; }
         .volunty .clause .cnt li h3 {
           font: 14px/1 'SimHei';
           text-align: center;
           color: rgba(35, 24, 21, 0.8); }
-        .volunty .clause .cnt li a {
+        .volunty .clause .cnt li .protocol {
           display: inline-block;
           width: 290px;
-          height: 40px;
+          height: 38px;
           font: 12px/1.75 'SimSun';
           color: rgba(35, 24, 21, 0.6);
           overflow: hidden;
           word-break: break-all;
           text-indent: 2em; }
-          .volunty .clause .cnt li a:focus {
+          .volunty .clause .cnt li .protocol:focus {
+            margin-top: 5px;
             position: absolute;
             height: auto;
             background: #f7f7f7;
             text-align: justify;
-            border: 1px solid rgba(35, 24, 21, 0.6);
             border-radius: 5px;
             padding: 8px; }
+            .volunty .clause .cnt li .protocol:focus ~ .more {
+              display: none; }
+        .volunty .clause .cnt li .more {
+          display: block;
+          font: 12px/1.2 "SimSun";
+          color: rgba(35, 24, 21, 0.6);
+          text-align: right; }
+          .volunty .clause .cnt li .more:before {
+            display: inline-block;
+            content: '';
+            margin-right: 7px;
+            width: 10px;
+            height: 6px;
+            background: url(../img/sprite.png) no-repeat -220px -20px; }
   .volunty .profile {
     width: 640px;
     overflow: hidden; }

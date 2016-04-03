@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>task10</title>
+</head>
+<style>
+	/*
+* @Author: yingyuk
+* @Date:   2016-04-02 00:47:59
+* @Last Modified by:   yingyuk
+* @Last Modified time: 2016-04-02 00:47:59
+*/
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.parent {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.parent > div {
+    box-sizing: border-box;
+    width: 150px;
+    margin: 20px;
+    border: 1px solid red;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 150px;
+    -ms-flex: 0 0 150px;
+    flex: 0 0 150px;
+    -webkit-box-align: middle;
+    -webkit-align-items: middle;
+    -ms-flex-align: middle;
+    align-items: middle;
+}
+
+.parent > div:last-child {
+    border: 1px solid blue;
+}
+
+.child1 {
+    height: 120px;
+}
+
+.child2 {
+    height: 100px;
+}
+
+.child3 {
+    height: 40px;
+}
+
+.child4 {
+    height: 200px;
+}
+
+@media screen and (max-width: 640px) {
+    .parent {
+        width: 640px;
+        -webkit-box-align: start;
+        -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+        align-items: flex-start;
+        -webkit-flex-flow: row wrap;
+        -ms-flex-flow: row wrap;
+        flex-flow: row wrap;
+    }
+    .parent > div:last-child {
+        -webkit-box-ordinal-group: 0;
+        -webkit-order: -1;
+        -ms-flex-order: -1;
+        order: -1;
+    }
+}
+
+</style>
+
+<body>
+    <div class="parent">
+        <div class="child1"></div>
+        <div class="child2"></div>
+        <div class="child3"></div>
+        <div class="child4"></div>
+    </div>
+</body>
+
+</html>

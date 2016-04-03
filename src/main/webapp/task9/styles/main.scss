@@ -1,0 +1,627 @@
+/*
+* @Author: yingyuk
+* @Date:   2016-04-02 15:20:09
+* @Last Modified by:   yingyuk
+* @Last Modified time: 2016-04-03 23:19:48
+*/
+
+%pr {
+  position: relative;
+}
+
+%ma {
+  margin: 0 auto;
+}
+
+%trag {
+  display: block;
+  position: absolute;
+  top: 50%;
+  width: 0;
+  height: 0;
+  content: '';
+  transform: translateY(-50%);
+  vertical-align: middle;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+}
+
+$colorArr:( mainCL:#e74f4d, fontCL:#787b83);
+@mixin bg($positionX:null, $positionY:null, $url:url(../images/sprite.png), $a:no-repeat) {
+  background: $url $a $positionX $positionY;
+}
+
+%cb {
+  &:after {
+    display: block;
+    clear: both;
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+    content: ".";
+  }
+  li {
+    zoom: 1;
+  }
+}
+
+%fr {
+  float: right;
+}
+
+%fl {
+  float: left;
+}
+
+%pr {
+  position: relative;
+}
+
+%pa {
+  position: absolute;
+}
+
+%dib {
+  display: inline-block;
+}
+
+@function colors($color) {
+  @return map-get($colorArr, $color);
+}
+
+@mixin br($R:50%) {
+  border-radius: $R;
+}
+
+$mainCL: #e74f4d;
+$fontCL: #787b83;
+$fontCL2: #fff;
+$bgCL:#ececec;
+$bgCL2:#f7f7f7;
+body {
+  width: 1280px;
+  box-sizing: border-box;
+}
+
+#header {
+  background: #228abf;
+  height: 56px;
+  @extend %cb;
+  .logo {
+    @extend %fl;
+    img {
+      margin: 10px 0 0 50px;
+    }
+  }
+  .headRight {
+    @extend %fr;
+    .searchWrap {
+      @extend %dib;
+      @extend %pr;
+      margin-right: 21px;
+      line-height: 56px;
+      .searchInput {
+        width: 313px;
+        height: 28px;
+        border: none;
+        border-radius: 14px;
+      }
+      .searchBtn {
+        position: absolute;
+        left: 18px;
+        top: 19px;
+        width: 17px;
+        height: 17px;
+        @include bg(-60px, -95px);
+      }
+    }
+    .login {
+      @extend %dib;
+      margin-right: 94px;
+      h4 {
+        color: white;
+        font-family: "Adobe Heiti Std";
+        font-size: 12px;
+        &:before {
+          content: '';
+          vertical-align: middle;
+          @extend %dib;
+          width: 15px;
+          height: 16px;
+          @include bg(-30px, -95px);
+        }
+      }
+    }
+  }
+}
+
+.container {
+  @extend %cb;
+  .sidebar {
+    @extend %fl;
+    width: 260px;
+    height: 1213px;
+    max-height: 100%;
+    background: #2a2e3d;
+    .profile {
+      height: 150px;
+      text-align: center;
+      .hd {
+        padding-left: 45px;
+        margin: 21px 0 24px;
+        text-align: left;
+        line-height: 57px;
+        .face {
+          @extend %dib;
+          img {
+            width: 47px;
+            height: 47px;
+            margin: 5px;
+            @include br;
+          }
+          &:before {
+            $r: 55px;
+            content: '';
+            display: block;
+            @extend %pa;
+            width: $r;
+            height: $r;
+            border: 1px solid #bababe;
+            background: transparent;
+            @include br;
+          }
+        }
+        .name {
+          @extend %dib;
+          margin-left: 18px;
+          font: 16px/21px "SimHei";
+          color: #f6f5f5;
+        }
+      }
+      .bd {
+        padding-left: 45px;
+        font: 16px/18px "SimHei";
+        color: #6e8095;
+        text-align: left;
+        .favorites {
+          text-align: center;
+          @extend %dib;
+          margin-left: 17px;
+          padding-right: 31px;
+          border-right: 2px solid #313545;
+        }
+        .fans {
+          @extend %dib;
+          text-align: center;
+          margin-left: 31px;
+        }
+      }
+    }
+    @mixin bgp($x:null, $y:null) {
+      background-position: $x $y;
+    }
+    .sidebarContent {
+      @at-root .treeFile {
+        div {
+          cursor: pointer;
+        }
+        .treeFileItem {
+          padding-left: 45px;
+          height: 64px;
+          font-size: 12px;
+          font-family: "SimHei";
+          line-height: 48px;
+          color: #6e8095;
+          &.active {
+            height: auto;
+            background: #383d4d;
+            .nodeTitle {
+              margin-bottom: -12px;
+              color: #ededef;
+            }
+          }
+          .nodeTitle {
+            &:before {
+              content: '';
+              @extend %dib;
+              width: 12px;
+              height: 12px;
+              margin-right: 10px;
+              @include bg;
+            }
+            $list: ( forms: -30px -20px, favorites: -60px -20px, share: -90px -20px, gallery: -60px -20px, record: -60px -20px, account: -120px -20px);
+            $keys:forms,
+            favorites,
+            share,
+            gallery,
+            record,
+            account;
+            @each $key in $keys {
+              &.#{$key}:before {
+                @include bgp(map-get($list, $key));
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.folder {
+  padding-left: 21px;
+  line-height: 30px;
+  .toggle {
+    width: 12px;
+    height: 12px;
+    @extend %dib;
+    // @extend %fl;
+    @include bg(-30px, -70px);
+  }
+  .name {
+    @extend %dib;
+    &:before {
+      content: '';
+      @extend %dib;
+      width: 12px;
+      height: 12px;
+      @include bg(-30px, -45px);
+    }
+  }
+  &.active {
+    .toggle {
+      @include bg(-60px, -70px);
+    }
+    .name {
+      color: #ededef;
+      &:before {
+        @include bg(-60px, -45px);
+      }
+    }
+  }
+  .file {
+    padding-left: 30px;
+    &:before {
+      content: '';
+      @extend %dib;
+      width: 12px;
+      height: 12px;
+      @include bg(-120px, -45px);
+    }
+    &.active {
+      color: #ededef;
+      &:before {
+        @include bg(-90px, -45px);
+      }
+    }
+  }
+}
+
+.viewport {
+  overflow: hidden;
+  background: #eeedec;
+  .nav {
+    height: 31px;
+    background: #fff;
+    .breadcrumb {
+      margin-left: 30px;
+      li {
+        @extend %dib;
+        font: 12px/31px "SimHei";
+        color: #aaa;
+        &.active {
+          color: #6898c2;
+        }
+        & + li:before {
+          // padding: 0 5px;
+          content: "/\00a0";
+          color: #b0b0b0;
+        }
+      }
+    }
+  }
+}
+
+.main {
+  padding: 0 70px 0 60px;
+}
+
+.detailSearch {
+  margin-top: 19px;
+  height: 86px;
+  background: #fff;
+  border: 1px solid #dddfe1;
+  line-height: 86px;
+  .filterBox {
+    margin-left: 30px;
+    font: 12px/26px "SimHei";
+    color: #aaa;
+    vertical-align: middle;
+    @extend %dib;
+    .wrap {
+      @extend %dib;
+    }
+    .col {
+      @extend %dib;
+      // margin-right: 37px;
+      vertical-align: top;
+      .tit {
+        margin-right: 15px;
+      }
+      select,
+      #date {
+        box-sizing: border-box;
+        border: 1px solid #ddd;
+        height: 21px;
+        line-height: 21px;
+      }
+      .wide {
+        width: 121px;
+      }
+      .narrow {
+        width: 71px;
+      }
+    }
+    .col1 {
+      width: 150px;
+    }
+    .col2 {
+      width: 210px;
+      &:after {
+        content: '';
+        cursor: pointer;
+        @extend %dib;
+        width: 28px;
+        height: 38px;
+        @include bg(-30px, -140px);
+      }
+    }
+    .col3 {
+      width: 320px;
+      .tit {
+        margin: 0 15px 0 10px;
+      }
+    }
+  }
+  .rangeSearch {
+    @extend %dib;
+    margin-left: 28px;
+    .search {
+      width: 51px;
+      height: 26px;
+      border: none;
+      color: #fff;
+      background: #388ac1;
+    }
+  }
+}
+
+.timeLine {
+  margin-top: 9px;
+  // margin: 9px -2px 0;
+  height: 65px;
+  display: flex;
+  // line-height: 56px;
+  .btn {
+    width: 31px;
+  }
+  a {
+    @extend %dib;
+    background-color: #fff;
+    // margin: auto 2px;
+    width: 111px;
+    height: 100%;
+    box-sizing: border-box;
+    vertical-align: middle;
+    text-align: center;
+    border: {
+      left: 1px solid #d7d9dc;
+      top: 1px solid #d7d9dc;
+    }
+    &+a {
+      margin-left: 4px;
+    }
+  }
+  .prev {
+    order: -1;
+    background: url(../images/sprite.png) no-repeat -60px -120px, #fff;
+  }
+  .next {
+    order: 1;
+    background: url(../images/sprite.png) no-repeat -90px -120px, #fff;
+  }
+  .history {
+    order: 2;
+    flex: 1;
+    line-height: 64px;
+    &:before {
+      content: '';
+      @extend %dib;
+      width: 32px;
+      height: 32px;
+      @include bg(-121px, -95px);
+      // line-height: 64px;
+      vertical-align: middle;
+    }
+  }
+  .timeCycle {
+    .top {
+      font: 12px/36px "Microsoft YaHei";
+      color: #323333;
+    }
+    .down {
+      font: 21px/1 "Microsoft YaHei";
+      color: #ec6500;
+      &:before {
+        content: '';
+        @extend %dib;
+        /* Style for "<编组>" */
+        width: 11px;
+        height: 12px;
+        @include bg(-90px, -95px);
+      }
+    }
+    // border-top: 3px solid transparent;
+    &.active,
+    &:hover {
+      border-top: 3px solid #4389c9;
+    }
+  }
+}
+
+.statistics {
+  .hd {
+    font: 12px/31px "Microsoft YaHei";
+    color: #323333;
+  }
+  .bd {
+    display: flex;
+    $list: (#43b29d, #388bc2, #d04b36, #e2cd47);
+    .amount {
+      flex: 1;
+      text-align: left;
+      padding: 12px 15px 12px 12px;
+      background: #fff;
+      box-shadow: 0 0 2px 2px #d7d9da;
+      @extend %cb;
+      &+.amount {
+        margin-left: 29px;
+      }
+      .info {
+        @extend %dib;
+        p {
+          font: 12px/25px "SimHei";
+          color: #323333;
+          & + p {
+            color: #aaa;
+            font: 10px/25px "SimHei";
+          }
+        }
+      }
+      .figure {
+        @extend %dib;
+        vertical-align: top;
+        @extend %fr;
+        width: 61px;
+        height: 47px;
+      }
+    }
+    .productA {
+      border-left: 4px solid #43b29d;
+      .figure {
+        background: #43b29d;
+      }
+    }
+    .productB {
+      border-left: 4px solid #388bc2;
+      .figure {
+        background: #388bc2;
+      }
+    }
+    .productC {
+      border-left: 4px solid #d04b36;
+      .figure {
+        background: #d04b36;
+      }
+    }
+    .productD {
+      border-left: 4px solid #e2cd47;
+      .figure {
+        background: #e2cd47;
+      }
+    }
+  }
+}
+
+.middle {
+  @extend %cb;
+}
+
+.tableCard {
+  height: 356px;
+  background: #fff;
+  vertical-align: top;
+  .hd {
+    color: #aaa;
+    font: 12px/41px "SimHei";
+    background: #f4f5f6;
+    border-bottom: 1px solid #e7e8eb;
+  }
+}
+
+.project {
+  margin-top: 14px;
+  box-sizing: border-box;
+  .detail {
+    @extend %dib;
+    width: 531px;
+    .bd {
+      margin: 13px 20px 24px 20px;
+    }
+    .navTab {
+      margin-bottom: -1px;
+      @extend %pr;
+      z-index: 100;
+      .navTabItem {
+        @extend %dib;
+        width: 84px;
+        height: 26px;
+        background: #ededf0;
+        border-radius: 3px 3px 0 0;
+        border: 1px solid transparent;
+         border-bottom: 1px solid #d7d8d8;
+        & + .navTabItem {
+          margin-left: 3px;
+        }
+        &.active,
+        &:hover {
+          background: #fff;
+          border: 1px solid #d7d8d8;
+          border-bottom: 1px solid #fff;
+        }
+
+      }
+      .itemA:hover{
+          & ~ .projectList{
+          	.itemA{
+          		z-index:100;
+          	}
+          }
+      }
+    }
+    .projectList {
+      @extend %pr;
+      height: 250px;
+      border: 1px solid #d7d8d8;
+      .projectItem {
+        @extend %pa;
+        width: 100%;
+        height: 100%;
+        background: #fff;
+      }
+    }
+  }
+  .summary {
+    width: 351px;
+    @extend %dib;
+    .hd {}
+    .bd {}
+  }
+}
+
+.bottom {
+  display: block;
+  margin-top: 9px;
+  .calendar {
+    @extend %dib;
+    width: 351px;
+    .hd {}
+    .bd {}
+  }
+  .top10 {
+    width: 531px;
+    @extend %dib;
+    .hd {}
+    .bd {}
+  }
+}
