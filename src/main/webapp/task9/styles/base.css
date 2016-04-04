@@ -2,7 +2,7 @@
 * @Author: yingyuk
 * @Date:   2016-04-02 22:39:08
 * @Last Modified by:   yingyuk
-* @Last Modified time: 2016-04-02 22:39:14
+* @Last Modified time: 2016-04-04 15:38:45
 */
 /* reset重置 */
 html,body,h1,h2,h3,h4,h5,h6,div,dl,dt,dd,ul,ol,li,p,blockquote,pre,hr,figure,table,caption,th,td,form,fieldset,legend,input,button,textarea,menu{margin:0;padding:0;outline:none;}
@@ -24,7 +24,7 @@ button,input{box-sizing:content-box}
 h1,h2,h3,h4,h5,h6,em,strong,b{font-weight:normal;}
 del,ins,u,s,a,a:hover{text-decoration:none;}
 body{background:#fff;}
-body,textarea,input,button,select,keygen,legend{font:14px/24px Microsoft Yahei,arial,simsun;color:#333;outline:0;}
+body,textarea,input,button,select,keygen,legend{font:12px/24px SimHei,Microsoft Yahei,arial;color:#333;outline:0;}
 mark{background:none;}
 a{color:#666;}
 a:focus{outline:none;}

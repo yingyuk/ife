@@ -15,16 +15,18 @@
 
 <body>
   <header id="header" class="scope">
-    <div class="logo">
-      <img src="images/logo.png" alt="logo">
-    </div>
-    <div class="headRight">
-      <div class="searchWrap">
-        <input class="searchInput"></input>
-        <div class="searchBtn"></div>
+    <div class="head">
+      <div class="logo">
+        <img src="images/logo.png" alt="logo">
       </div>
-      <div class="login">
-        <h4>登录</h4>
+      <div class="headRight">
+        <div class="searchWrap">
+          <input class="searchInput"></input>
+          <div class="searchBtn"></div>
+        </div>
+        <div class="login">
+          <h4>登录</h4>
+        </div>
       </div>
     </div>
   </header>
@@ -235,9 +237,14 @@
               </div>
               <div class="bd">
                 <ul class="navTab">
-                  <li class="navTabItem itemA active"><a class="active" href="#project1">项目一</a></li><li class="navTabItem itemB"><a href="#project2">项目二</a></li><li class="navTabItem itemC"><a href="#project3">项目三</a></li><li class="navTabItem itemD"><a href="#project4">项目四</a></li><li class="navTabItem itemE"><a href="#project5">项目五</a></li></ul>
+                  <li class="navTabItem active"><a class="active" href="#project1">项目一</a></li>
+                  <li class="navTabItem"><a href="#project2">项目二</a></li>
+                  <li class="navTabItem"><a href="#project3">项目三</a></li>
+                  <li class="navTabItem"><a href="#project4">项目四</a></li>
+                  <li class="navTabItem"><a href="#project5">项目五</a></li>
+                </ul>
                 <ul class="projectList">
-                  <li class="projectItem itemA" id="project1">
+                  <li class="projectItem active" id="project1">
                     <table cellspacing="0">
                       <tr>
                         <td>购买材料一</td>
@@ -277,99 +284,104 @@
                       </tr>
                     </table>
                   </li>
-                  <li class="projectItem itemB" id="project2">项目二内容省略</li>
-                  <li class="projectItem itemC" id="project3">项目三内容省略</li>
-                  <li class="projectItem itemD" id="project4">项目四内容省略</li>
-                  <li class="projectItem itemE" id="project5">项目五内容省略</li>
+                  <li class="projectItem" id="project2">项目二内容省略</li>
+                  <li class="projectItem" id="project3">项目三内容省略</li>
+                  <li class="projectItem" id="project4">项目四内容省略</li>
+                  <li class="projectItem" id="project5">项目五内容省略</li>
                 </ul>
               </div>
             </div>
             <div class="summary tableCard">
               <div class="hd"><span>第一组项目</span></div>
-              <div class="bd"><table>
-    <tr>
-      <td colspan="2">
-        <p>标题</p>
-        <p>项目报表三</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>价格</p>
-        <p>&yen;158</p>
-      </td>
-      <td>
-        <p>负责人</p>
-        <p>小A</p>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="2">
-        <p>详细描述</p>
-        <p>该项目目前负责人是......</p>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="2">
-        <label for="agree">
-          <input id="agree" type="radio"> 遵守保密协议
-        </label>
-        <button type="submit">搜索</button>
-      </td>
-    </tr>
-  </table></div>
+              <div class="bd">
+                <table>
+                  <tr>
+                    <td colspan="2">
+                      <p class="tit">标题</p>
+                      <p class="cnt">项目报表三</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p class="tit">价格</p>
+                      <p class="cnt">&yen;158</p>
+                    </td>
+                    <td colspan="2">
+                      <p class="tit">负责人</p>
+                      <p class="cnt">小A</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="2" rowspan="3" class="about">
+                      <p class="tit">详细描述</p>
+                      <p class="cnt">该项目目前负责人是......</p>
+                    </td>
+                  </tr>
+                  <tr></tr>
+                  <tr></tr>
+                  <tr>
+                    <td colspan="2">
+                      <label for="agree" class="tit">
+                        <input style="vertical-align: middle;" id="agree" type="checkbox" checked> 遵守保密协议
+                      </label>
+                      <button type="submit">搜索</button>
+                    </td>
+                  </tr>
+                </table>
+              </div>
             </div>
           </section>
         </article>
-        <article class="bottom">
-          <section class="calendar tableCard">
+        <article class="otherInfo">
+          <section id="calendar" class="calendar tableCard">
             <div class="hd">
               <h3>日历</h3></div>
             <div class="bd">
-              <div class="year-box">
-                <select name="">
-                  <option value="">2014年</option>
-                  <option value="">2015年</option>
-                  <option value="">2016年</option>
-                  <option value="">2017年</option>
-                  <option value="">2018年</option>
-                </select>
-                <div class="dropdown">
+              <div class="boxTit">
+                <div class="year-box">
+                  <select name="">
+                    <option value="">2014年</option>
+                    <option value="">2015年</option>
+                    <option value="">2016年</option>
+                    <option value="">2017年</option>
+                    <option value="">2018年</option>
+                  </select>
+                  <div class="dropdown">
+                  </div>
                 </div>
+                <div class="month-box">
+                  <a href="###" class="prev-month" onclick="return false">&lt;</a>
+                  <select name="month">
+                    <option value="1">1月</option>
+                    <option value="2">2月</option>
+                    <option value="3">3月</option>
+                    <option value="4">4月</option>
+                    <option value="5">5月</option>
+                    <option value="6">6月</option>
+                    <option value="7">7月</option>
+                    <option value="8">8月</option>
+                    <option value="9">9月</option>
+                    <option value="10">10月</option>
+                    <option value="11">11月</option>
+                    <option value="12">12月</option>
+                  </select><a href="###" class="next-month" onclick="return false">&gt;</a>
+                </div>
+                <div class="holiday-box">
+                  <select>
+                    <option value="default" selected="selected" class="option selected">标注日期</option>
+                    <option value="元旦" class="option">元旦</option>
+                    <option value="除夕" class="option">除夕</option>
+                    <option value="春节" class="option">春节</option>
+                    <option value="清明节" class="option">清明节</option>
+                    <option value="劳动节" class="option">劳动节</option>
+                    <option value="端午节" class="option">端午节</option>
+                    <option value="中秋节" class="option">中秋节</option>
+                    <option value="国庆节" class="option">国庆节</option>
+                  </select>
+                </div>
+                <a class="backtoday" href="###">返回今天</a>
               </div>
-              <div class="month-box">
-                <a href="###" class="prev-month" onclick="return false">&lt;</a>
-                <a href="###" class="next-month" onclick="return false">&gt;</a>
-                <select name="month">
-                  <option value="1">1月</option>
-                  <option value="2">2月</option>
-                  <option value="3">3月</option>
-                  <option value="4">4月</option>
-                  <option value="5">5月</option>
-                  <option value="6">6月</option>
-                  <option value="7">7月</option>
-                  <option value="8">8月</option>
-                  <option value="9">9月</option>
-                  <option value="10">10月</option>
-                  <option value="11">11月</option>
-                  <option value="12">12月</option>
-                </select>
-              </div>
-              <div class="holiday-box">
-                <select>
-                  <option value="default" selected="selected" class="option selected">标注日期</option>
-                  <option value="元旦" class="option">元旦</option>
-                  <option value="除夕" class="option">除夕</option>
-                  <option value="春节" class="option">春节</option>
-                  <option value="清明节" class="option">清明节</option>
-                  <option value="劳动节" class="option">劳动节</option>
-                  <option value="端午节" class="option">端午节</option>
-                  <option value="中秋节" class="option">中秋节</option>
-                  <option value="国庆节" class="option">国庆节</option>
-                </select>
-              </div>
-              <a class="backtoday" href="###">返回今天</a>
-              <div class="box c-gap-top">
+              <div id="calendarBox" class="box c-gap-top">
                 <table class="table">
                   <tbody>
                     <tr>
@@ -382,19 +394,23 @@
                       <th>日</th>
                     </tr>
                     <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
                       <td>
                         <div class="relative"><a href="###" class="festival"><span class="daynumber">1</span><span class="almanac">愚人节</span></a></div>
                       </td>
                       <td>
-                        <div class="relative"><a href="###" class="rest weekend border selected"><span class="daynumber">2</span><span class="almanac">廿五</span></a></div>
+                        <div class="relative"><a href="###" class="weekend selected"><span class="daynumber">2</span><span class="almanac">廿五</span></a></div>
                       </td>
                       <td>
-                        <div class="relative"><a href="###" class="rest weekend"><span class="daynumber">3</span><span class="almanac">廿六</span></a></div>
+                        <div class="relative"><a href="###" class="weekend"><span class="daynumber">3</span><span class="almanac">廿六</span></a></div>
                       </td>
                     </tr>
                     <tr>
                       <td>
-                        <div class="relative"><a href="###" class="rest festival"><span class="daynumber">4</span><span class="almanac">清明</span></a></div>
+                        <div class="relative"><a href="###" class="festival selected"><span class="daynumber">4</span><span class="almanac">清明</span></a></div>
                       </td>
                       <td>
                         <div class="relative"><a href="###"><span class="daynumber">5</span><span class="almanac">廿八</span></a></div>
@@ -478,7 +494,7 @@
                         <div class="relative"><a href="###"><span class="daynumber">29</span><span class="almanac">廿三</span></a></div>
                       </td>
                       <td>
-                        <div class="relative"><a href="###" class="rest weekend"><span class="daynumber">30</span><span class="almanac">廿四</span></a></div>
+                        <div class="relative"><a href="###" class="weekend"><span class="daynumber">30</span><span class="almanac">廿四</span></a></div>
                       </td>
                     </tr>
                   </tbody>
@@ -490,7 +506,7 @@
             <div class="hd">
               <h3>汽车行业品牌榜</h3></div>
             <div class="bd">
-              <table cellspacing="0">
+              <table class="table" cellspacing="0">
                 <thead>
                   <tr>
                     <td width="15%">排名</td>
@@ -512,7 +528,7 @@
                     <td>丰田</td>
                     <td>
                       <span class="count">29307333</span>
-                      <span class="progress-bar"><span class="progress sec" style="width: 83%"></span></span>
+                      <span class="progress-bar"><span class="progress second" style="width: 83%"></span></span>
                     </td>
                   </tr>
                   <tr>
@@ -520,7 +536,7 @@
                     <td>奥迪</td>
                     <td>
                       <span class="count">23139070</span>
-                      <span class="progress-bar"><span class="progress thr" style="width: 80%"></span></span>
+                      <span class="progress-bar"><span class="progress third" style="width: 80%"></span></span>
                     </td>
                   </tr>
                   <tr>
@@ -588,8 +604,5 @@
     </article>
   </article>
 </body>
-<!-- build:js scripts/main.js -->
-<script type="text/javascript" src="scripts/main.js"></script>
-<!-- endbuild -->
 
 </html>

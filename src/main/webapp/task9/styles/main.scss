@@ -2,33 +2,31 @@
 * @Author: yingyuk
 * @Date:   2016-04-02 15:20:09
 * @Last Modified by:   yingyuk
-* @Last Modified time: 2016-04-03 23:19:48
+* @Last Modified time: 2016-04-04 16:28:07
 */
+
+%dib {
+  display: inline-block;
+}
 
 %pr {
   position: relative;
+}
+
+%pa {
+  position: absolute;
 }
 
 %ma {
   margin: 0 auto;
 }
 
-%trag {
-  display: block;
-  position: absolute;
-  top: 50%;
-  width: 0;
-  height: 0;
-  content: '';
-  transform: translateY(-50%);
-  vertical-align: middle;
-  border-top: 15px solid transparent;
-  border-bottom: 15px solid transparent;
+%fr {
+  float: right;
 }
 
-$colorArr:( mainCL:#e74f4d, fontCL:#787b83);
-@mixin bg($positionX:null, $positionY:null, $url:url(../images/sprite.png), $a:no-repeat) {
-  background: $url $a $positionX $positionY;
+%fl {
+  float: left;
 }
 
 %cb {
@@ -45,24 +43,19 @@ $colorArr:( mainCL:#e74f4d, fontCL:#787b83);
   }
 }
 
-%fr {
-  float: right;
+%cp {
+  cursor: pointer;
 }
 
-%fl {
-  float: left;
+%shadow {
+  &:hover {
+    box-shadow: 0 0 2px 2px #ccc;
+  }
 }
 
-%pr {
-  position: relative;
-}
-
-%pa {
-  position: absolute;
-}
-
-%dib {
-  display: inline-block;
+$colorArr:( mainCL:#e74f4d, fontCL:#787b83);
+@mixin bg($positionX:null, $positionY:null, $url:url(../images/sprite.png), $a:no-repeat) {
+  background: $url $a $positionX $positionY;
 }
 
 @function colors($color) {
@@ -73,62 +66,98 @@ $colorArr:( mainCL:#e74f4d, fontCL:#787b83);
   border-radius: $R;
 }
 
-$mainCL: #e74f4d;
-$fontCL: #787b83;
-$fontCL2: #fff;
-$bgCL:#ececec;
-$bgCL2:#f7f7f7;
-body {
-  width: 1280px;
-  box-sizing: border-box;
+@mixin bgp($x:null, $y:null) {
+  background-position: $x $y;
 }
 
+$bgColor:#eee;
+$headbgColor:#228abf;
+$sidebgColor:#2a2e3d;
+$titColor:#f4f5f6;
+$borderColor:#ced1d4;
+$borderColor2:#cbcbcb;
+$fontColor:#333;
+$cntWide:1280px;
+body {
+  background: $bgColor;
+}
+
+
+/**
+body
+	header
+	container
+		sidebar
+		viewport
+ */
+
+
+/*
+#header 
+  .head 
+    .logo 
+      img 
+    .headRight 
+      .searchWrap 
+        .searchInput 
+        .searchBtn 
+      .login 
+        h4 
+          &:before 
+ */
+
 #header {
-  background: #228abf;
-  height: 56px;
-  @extend %cb;
-  .logo {
-    @extend %fl;
-    img {
-      margin: 10px 0 0 50px;
-    }
-  }
-  .headRight {
-    @extend %fr;
-    .searchWrap {
-      @extend %dib;
-      @extend %pr;
-      margin-right: 21px;
-      line-height: 56px;
-      .searchInput {
-        width: 313px;
-        height: 28px;
-        border: none;
-        border-radius: 14px;
-      }
-      .searchBtn {
-        position: absolute;
-        left: 18px;
-        top: 19px;
-        width: 17px;
-        height: 17px;
-        @include bg(-60px, -95px);
+  background: $headbgColor;
+  .head {
+    width: $cntWide;
+    height: 56px;
+    margin: 0 auto;
+    background: $headbgColor;
+    @extend %cb;
+    .logo {
+      @extend %fl;
+      img {
+        margin: 10px 0 0 50px;
       }
     }
-    .login {
-      @extend %dib;
-      margin-right: 94px;
-      h4 {
-        color: white;
-        font-family: "Adobe Heiti Std";
-        font-size: 12px;
-        &:before {
-          content: '';
-          vertical-align: middle;
-          @extend %dib;
-          width: 15px;
-          height: 16px;
-          @include bg(-30px, -95px);
+    .headRight {
+      @extend %fr;
+      .searchWrap {
+        @extend %dib;
+        @extend %pr;
+        margin-right: 21px;
+        line-height: 56px;
+        .searchInput {
+          width: 313px;
+          height: 28px;
+          padding-left: 15px;
+          border: none;
+          border-radius: 14px;
+        }
+        .searchBtn {
+          position: absolute;
+          left: 18px;
+          top: 20px;
+          width: 17px;
+          height: 17px;
+          @include bg(-60px, -95px);
+        }
+      }
+      .login {
+        @extend %dib;
+        margin-right: 94px;
+        h4 {
+          font: 12px/16px "Adobe Heiti Std";
+          color: #fff;
+          &:before {
+            content: '';
+            @extend %dib;
+            width: 15px;
+            height: 16px;
+            margin-right: 4px;
+            vertical-align: top;
+            @include bg(-30px, -95px);
+          }
         }
       }
     }
@@ -136,18 +165,20 @@ body {
 }
 
 .container {
+  width: $cntWide;
+  margin: 0 auto;
   @extend %cb;
   .sidebar {
+    $padingLeft: 45px;
     @extend %fl;
     width: 260px;
-    height: 1213px;
-    max-height: 100%;
-    background: #2a2e3d;
+    height: 1130px;
+    background: $sidebgColor;
     .profile {
       height: 150px;
       text-align: center;
       .hd {
-        padding-left: 45px;
+        padding-left: $padingLeft;
         margin: 21px 0 24px;
         text-align: left;
         line-height: 57px;
@@ -162,63 +193,67 @@ body {
           &:before {
             $r: 55px;
             content: '';
-            display: block;
             @extend %pa;
+            display: block;
             width: $r;
             height: $r;
             border: 1px solid #bababe;
             background: transparent;
+            vertical-align: middle;
             @include br;
           }
         }
         .name {
           @extend %dib;
           margin-left: 18px;
-          font: 16px/21px "SimHei";
-          color: #f6f5f5;
+          font-size: 16px;
+          color: #f5f5f5;
         }
       }
       .bd {
-        padding-left: 45px;
-        font: 16px/18px "SimHei";
-        color: #6e8095;
+        padding-left: $padingLeft;
+        font-size: 16px;
+        line-height: 18px;
         text-align: left;
+        color: #6e8095;
         .favorites {
-          text-align: center;
           @extend %dib;
           margin-left: 17px;
           padding-right: 31px;
+          text-align: center;
           border-right: 2px solid #313545;
+          @extend %cp;
         }
         .fans {
           @extend %dib;
-          text-align: center;
           margin-left: 31px;
+          text-align: center;
+          @extend %cp;
+          cursor: pointer;
         }
       }
     }
-    @mixin bgp($x:null, $y:null) {
-      background-position: $x $y;
-    }
     .sidebarContent {
       @at-root .treeFile {
-        div {
-          cursor: pointer;
-        }
+        $activeColor: #383d4d;
         .treeFileItem {
+          & div {
+            @extend %cp;
+          }
           padding-left: 45px;
           height: 64px;
-          font-size: 12px;
-          font-family: "SimHei";
-          line-height: 48px;
+          line-height: 64px;
           color: #6e8095;
           &.active {
             height: auto;
-            background: #383d4d;
+            background: $activeColor;
             .nodeTitle {
               margin-bottom: -12px;
               color: #ededef;
             }
+          }
+          &:hover {
+            background: $activeColor;
           }
           .nodeTitle {
             &:before {
@@ -227,6 +262,7 @@ body {
               width: 12px;
               height: 12px;
               margin-right: 10px;
+              vertical-align: middle;
               @include bg;
             }
             $list: ( forms: -30px -20px, favorites: -60px -20px, share: -90px -20px, gallery: -60px -20px, record: -60px -20px, account: -120px -20px);
@@ -255,7 +291,6 @@ body {
     width: 12px;
     height: 12px;
     @extend %dib;
-    // @extend %fl;
     @include bg(-30px, -70px);
   }
   .name {
@@ -265,6 +300,7 @@ body {
       @extend %dib;
       width: 12px;
       height: 12px;
+      margin-right: 4px;
       @include bg(-30px, -45px);
     }
   }
@@ -286,6 +322,7 @@ body {
       @extend %dib;
       width: 12px;
       height: 12px;
+      margin-right: 4px;
       @include bg(-120px, -45px);
     }
     &.active {
@@ -313,7 +350,6 @@ body {
           color: #6898c2;
         }
         & + li:before {
-          // padding: 0 5px;
           content: "/\00a0";
           color: #b0b0b0;
         }
@@ -323,7 +359,7 @@ body {
 }
 
 .main {
-  padding: 0 70px 0 60px;
+  padding: 0 70px 60px 60px;
 }
 
 .detailSearch {
@@ -332,21 +368,25 @@ body {
   background: #fff;
   border: 1px solid #dddfe1;
   line-height: 86px;
+  @extend %shadow;
   .filterBox {
-    margin-left: 30px;
-    font: 12px/26px "SimHei";
-    color: #aaa;
-    vertical-align: middle;
     @extend %dib;
+    margin-left: 30px;
+    font-size: 0;
+    vertical-align: middle;
+    line-height: 30px;
     .wrap {
       @extend %dib;
     }
     .col {
       @extend %dib;
-      // margin-right: 37px;
       vertical-align: top;
       .tit {
         margin-right: 15px;
+      }
+      label {
+        color: #aaa;
+        font: 12px/28px "SimHei";
       }
       select,
       #date {
@@ -398,17 +438,14 @@ body {
 
 .timeLine {
   margin-top: 9px;
-  // margin: 9px -2px 0;
   height: 65px;
   display: flex;
-  // line-height: 56px;
   .btn {
     width: 31px;
   }
   a {
     @extend %dib;
     background-color: #fff;
-    // margin: auto 2px;
     width: 111px;
     height: 100%;
     box-sizing: border-box;
@@ -418,6 +455,7 @@ body {
       left: 1px solid #d7d9dc;
       top: 1px solid #d7d9dc;
     }
+    @extend %shadow;
     &+a {
       margin-left: 4px;
     }
@@ -440,7 +478,6 @@ body {
       width: 32px;
       height: 32px;
       @include bg(-121px, -95px);
-      // line-height: 64px;
       vertical-align: middle;
     }
   }
@@ -455,15 +492,12 @@ body {
       &:before {
         content: '';
         @extend %dib;
-        /* Style for "<编组>" */
         width: 11px;
         height: 12px;
         @include bg(-90px, -95px);
       }
     }
-    // border-top: 3px solid transparent;
-    &.active,
-    &:hover {
+    &.active {
       border-top: 3px solid #4389c9;
     }
   }
@@ -484,6 +518,7 @@ body {
       background: #fff;
       box-shadow: 0 0 2px 2px #d7d9da;
       @extend %cb;
+      @extend %shadow;
       &+.amount {
         margin-left: 29px;
       }
@@ -541,11 +576,13 @@ body {
   height: 356px;
   background: #fff;
   vertical-align: top;
+  @extend %shadow;
   .hd {
     color: #aaa;
     font: 12px/41px "SimHei";
-    background: #f4f5f6;
+    padding-left: 21px;
     border-bottom: 1px solid #e7e8eb;
+    background: #f4f5f6;
   }
 }
 
@@ -556,7 +593,7 @@ body {
     @extend %dib;
     width: 531px;
     .bd {
-      margin: 13px 20px 24px 20px;
+      margin: 13px 20px 24px 21px;
     }
     .navTab {
       margin-bottom: -1px;
@@ -569,7 +606,7 @@ body {
         background: #ededf0;
         border-radius: 3px 3px 0 0;
         border: 1px solid transparent;
-         border-bottom: 1px solid #d7d8d8;
+        border-bottom: 1px solid #d7d8d8;
         & + .navTabItem {
           margin-left: 3px;
         }
@@ -579,49 +616,213 @@ body {
           border: 1px solid #d7d8d8;
           border-bottom: 1px solid #fff;
         }
-
-      }
-      .itemA:hover{
-          & ~ .projectList{
-          	.itemA{
-          		z-index:100;
-          	}
-          }
+        a {
+          @extend %dib;
+          width: 100%;
+          color: #535353;
+          text-align: center;
+          line-height: 26px;
+        }
       }
     }
     .projectList {
       @extend %pr;
       height: 250px;
+      padding: 25px 0 0 35px;
+      box-sizing: border-box;
       border: 1px solid #d7d8d8;
+      border-radius: 0 3px 3px 3px;
       .projectItem {
         @extend %pa;
-        width: 100%;
-        height: 100%;
+        width: 410px;
+        height: 220px;
         background: #fff;
+        &.active {
+          z-index: 5;
+        }
+        &:target {
+          z-index: 10;
+        }
+        td {
+          width: 100px;
+          padding-left: 17px;
+          box-sizing: border-box;
+          border: 1px solid #d2d3d4;
+          font: 12px/2.5 "SimSun";
+          color: #535353;
+        }
       }
     }
   }
   .summary {
     width: 351px;
     @extend %dib;
+    @extend %fr;
     .hd {}
-    .bd {}
+    .bd {
+      padding: 15px 35px;
+      font-size: 12px;
+      table {
+        width: 100%;
+        height: 100%;
+        tr {
+          height: 43px;
+          & + tr {
+            border-top: 1px solid #e8e8e8;
+          }
+          td {
+            line-height: 17px;
+            height: 43px;
+            & + td {
+              border-left: 1px solid #e8e8e8;
+            }
+            .tit {
+              color: #c3c2c2;
+            }
+            .cnt {
+              color: #535353;
+            }
+            button {
+              @extend %fr;
+              width: 51px;
+              height: 26px;
+              border: none;
+              border-radius: 2px;
+              background: #388ac1;
+              color: #fff;
+            }
+          }
+          .about {
+            vertical-align: top;
+          }
+        }
+      }
+    }
   }
 }
 
-.bottom {
+.otherInfo {
   display: block;
   margin-top: 9px;
-  .calendar {
+  @at-root #calendar {
     @extend %dib;
     width: 351px;
     .hd {}
-    .bd {}
+    .bd {
+      padding: 0 20px;
+      .boxTit {
+        display: flex;
+        border-bottom: 2px solid #a9cfec;
+        .year-box,
+        .month-box,
+        .holiday-box,
+        .backtoday {
+          flex: 1;
+          margin: 10px 2px;
+          text-align: center;
+          border: 1px solid #cbcbcb;
+          color: #535353;
+          font: 12px/23px "SimHei";
+          select {
+            width: 100%;
+            height: 23px;
+            border: none;
+            color: #535353;
+            font: 12px/23px "SimHei";
+          }
+        }
+        .month-box {
+          select {
+            width: 50px;
+          }
+        }
+      }
+    }
+    @at-root #calendarBox {
+      .table {
+        width: 100%;
+        font: 11px/14px "SimHei";
+        color: #323333;
+        th {
+          border-bottom: 1px solid #333;
+        }
+        th,
+        td {
+          text-align: center;
+          padding: 8px 5px;
+          .relative {
+            a {
+              display: block;
+              border: 1px solid transparent;
+              .daynumber {
+                display: block;
+              }
+              &.weekend {
+                .daynumber {
+                  color: #c9161d;
+                }
+              }
+              &.festival {
+                .almanac {
+                  color: #c9161d;
+                }
+              }
+              &.selected,
+              &:hover {
+                border: 1px solid #f7d155;
+              }
+            }
+          }
+        }
+      }
+    }
   }
-  .top10 {
-    width: 531px;
-    @extend %dib;
-    .hd {}
-    .bd {}
+}
+
+.top10 {
+  width: 531px;
+  @extend %dib;
+  @extend %fr;
+  .bd {
+    padding: 18px 40px;
+    .table {
+      width: 100%;
+      tr {
+        cursor: pointer;
+        &:hover {
+          background: #f4f6f7;
+        }
+        th,
+        td {
+          text-align: center;
+          border: 1px solid #c4c4c4;
+          height: 23px;
+        }
+      }
+      .progress-bar {
+        @extend %dib;
+        width: 167px;
+        height: 4px;
+        margin-left: 22px;
+        background: #dcdcdc;
+        vertical-align: middle;
+        text-align: left;
+        .progress {
+          @extend %dib;
+          vertical-align: top;
+          height: 100%;
+          background: #7fcbf0;
+          &.first {
+            background: #ed6e52;
+          }
+          &.second {
+            background: #ee804f;
+          }
+          &.third {
+            background: #f19e4f;
+          }
+        }
+      }
+    }
   }
 }
