@@ -46,6 +46,27 @@
 <dl id="html">
     <strong>HTML</strong>
     
+<dt><a href="http://yingyuk.space/ife/task12/task12.html" target="_blank">任务十二：学习CSS 3的新特性</a></dt>
+    <dd><a href="https://github.com/yingyuk/ife/blob/master/src/main/webapp/task12/task12.html" target="_blank">任务十二源码</a></dd>
+    <dd><a href="http://ife.baidu.com/task/detail?taskId=12" target="_blank">任务详情</a></dd>
+
+    
+<dt><a href="http://yingyuk.space/ife/task8/task11.html" target="_blank">任务十一：移动Web页面布局实践
+</a></dt>
+    <dd><a href="https://github.com/yingyuk/ife/blob/master/src/main/webapp/task11/task11.html" target="_blank">任务十一源码</a></dd>
+    <dd><a href="http://ife.baidu.com/task/detail?taskId=11" target="_blank">任务详情</a></dd>
+
+    
+<dt><a href="http://yingyuk.space/ife/task8/task10.html" target="_blank">任务十：Flexbox 布局练习</a></dt>
+    <dd><a href="https://github.com/yingyuk/ife/blob/master/src/main/webapp/task10/task10.html" target="_blank">任务十源码</a></dd>
+    <dd><a href="http://ife.baidu.com/task/detail?taskId=10" target="_blank">任务详情</a></dd>
+
+    
+<dt><a href="http://yingyuk.space/ife/task8/task9.html" target="_blank">任务九：使用HTML/CSS实现一个复杂页面</a></dt>
+    <dd><a href="https://github.com/yingyuk/ife/blob/master/src/main/webapp/task9/task9.html" target="_blank">任务九源码</a></dd>
+    <dd><a href="http://ife.baidu.com/task/detail?taskId=9" target="_blank">任务详情</a></dd>
+
+    
 <dt><a href="http://yingyuk.space/ife/task8/task8.html" target="_blank">任务八：响应式网格（栅格化）布局</a></dt>
     <dd><a href="https://github.com/yingyuk/ife/blob/master/src/main/webapp/task8/task8.html" target="_blank">任务八源码</a></dd>
     <dd><a href="http://ife.baidu.com/task/detail?taskId=8" target="_blank">任务详情</a></dd>
