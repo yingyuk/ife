@@ -3,7 +3,7 @@
 * @Author: yingyuk
 * @Date:   2016-03-31 11:16:13
 * @Last Modified by:   yingyuk
-* @Last Modified time: 2016-04-02 14:46:45
+* @Last Modified time: 2016-04-06 21:46:22
 */
 .container, #banner, #about-world {
   position: relative; }
@@ -182,7 +182,7 @@
         height: 17px;
         right: 8px;
         top: 8px;
-        background: url(../img/sprite.png) no-repeat -360px -80px; }
+        background: url(../img/sprite.png) no-repeat -170px -20px; }
     #cityInfo form .select ul {
       position: relative;
       top: -1px;
@@ -195,7 +195,7 @@
         background: #ececec;
         color: #000; }
         #cityInfo form .select ul li:hover {
-          background: url(../img/sprite.png) no-repeat -360px -20px #e74f4d; }
+          background: url(../img/sprite.png) no-repeat -210px -10px #e74f4d; }
     #cityInfo form .select:focus {
       border-left: 1px solid #e74f4d;
       border-right: 1px solid #e74f4d;
